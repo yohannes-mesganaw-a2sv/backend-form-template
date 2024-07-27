@@ -31,9 +31,7 @@ func main() {
         // Route requests to the appropriate handler based on the HTTP method
         if r.Method == http.MethodPost {
             addBookHandler(w, r)
-        } else if r.Method == http.MethodGet {
-            getBooksHandler(w, r)
-        } else {
+        }else {
             http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
         }
     })
